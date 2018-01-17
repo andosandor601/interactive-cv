@@ -1,11 +1,11 @@
 import Compositor from './compositor.js';
 import Entity from './entity.js';
 import Timer from './timer.js';
+import Keyboard from './keyboardState.js';
 import { loadLevel } from './loaders.js';
-import { createMe } from './entities.js'
-import { loadBackgroundSprites } from './sprites.js'
+import { createMe } from './entities.js';
+import { loadBackgroundSprites } from './sprites.js';
 import { createBackgroundLayer, createSpriteLayer } from './layers.js';
-
 
 const canvas = document.getElementById('screen');
 const context = canvas.getContext('2d');
@@ -21,9 +21,20 @@ Promise.all([
         const backgroundLayer = createBackgroundLayer(level.backgrounds, backgroundSprites);
         comp.layers.push(backgroundLayer);
 
-        const gravity = 30;
+        const gravity = 1500;
         me.pos.set(120, 400);
-        me.vel.set(300, -600);
+
+        const UP = 38;
+        const DOWN = 40;
+        const input = new Keyboard();
+        input.addMapping(UP, keyState => {
+            if (keyState) {
+                me.jump.start();
+            }else{
+                me.jump.canceled();
+            }
+        });
+        input.listenTo(window);
 
         const spriteLayer = createSpriteLayer(me);
         comp.layers.push(spriteLayer);
@@ -31,9 +42,9 @@ Promise.all([
         const timer = new Timer(1 / 60);
 
         timer.update = function update(deltaTime) {
-            comp.draw(context);
             me.update(deltaTime);
-            me.vel.y += gravity;
+            comp.draw(context);
+            me.vel.y += gravity * deltaTime;
         }
 
         timer.start();
