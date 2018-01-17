@@ -1,44 +1,40 @@
 import Compositor from './compositor.js';
+import Entity from './entity.js';
+import Timer from './timer.js';
 import { loadLevel } from './loaders.js';
-import { loadBackgroundSprites, loadMeSprites } from './sprites.js'
-import { createBackgroundLayer } from './layers.js';
+import { createMe } from './entities.js'
+import { loadBackgroundSprites } from './sprites.js'
+import { createBackgroundLayer, createSpriteLayer } from './layers.js';
+
 
 const canvas = document.getElementById('screen');
 const context = canvas.getContext('2d');
 
-function createSpriteLayer(sprite, pos) {
-    return function drawSpriteLayer(context) {
-        for (let i = 0; i < 20; i++) {
-            sprite.draw('me', context, pos.x + i * 20, pos.y);
-        }
-    };
-}
-
 Promise.all([
-    loadMeSprites(),
+    createMe(),
     loadBackgroundSprites(),
     loadLevel('1-1'),
 ])
-    .then(([meSprite, backgroundSprites, level]) => {
+    .then(([me, backgroundSprites, level]) => {
         const comp = new Compositor();
 
         const backgroundLayer = createBackgroundLayer(level.backgrounds, backgroundSprites);
         comp.layers.push(backgroundLayer);
 
-        const pos = {
-            x: 0,
-            y: 0,
-        };
+        const gravity = 30;
+        me.pos.set(120, 400);
+        me.vel.set(300, -600);
 
-        const spriteLayer = createSpriteLayer(meSprite, pos);
+        const spriteLayer = createSpriteLayer(me);
         comp.layers.push(spriteLayer);
 
-        function update() {
+        const timer = new Timer(1 / 60);
+
+        timer.update = function update(deltaTime) {
             comp.draw(context);
-            pos.x += 2;
-            pos.y += 2;
-            requestAnimationFrame(update);
+            me.update(deltaTime);
+            me.vel.y += gravity;
         }
 
-        update();
+        timer.start();
     });
