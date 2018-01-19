@@ -7,11 +7,11 @@ import { setupKeyboard } from './input.js';
 const canvas = document.getElementById('screen');
 const context = canvas.getContext('2d');
 
-Promise.all([
-    createMe(),
+Promise.all([ 
     loadLevel('1-1'),
+    createMe(),
 ])
-    .then(([me, level]) => {
+    .then(([level, me]) => {
 
         me.pos.set(120, 120);
 

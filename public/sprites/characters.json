@@ -1,0 +1,9 @@
+{
+    "imageURL": "/img/characters.png",
+    "frames": [
+        {
+            "name": "me",
+            "rect": [2, 0, 18, 35]
+        }
+    ]
+}
