@@ -19,6 +19,8 @@ Promise.all([
 
         const input = setupKeyboard(me);
 
+        //level.comp.layers.push(createCollisionLayer(level));
+
         input.listenTo(window);
 
         const timer = new Timer(1 / 60);

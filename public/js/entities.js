@@ -8,7 +8,7 @@ export function createMe() {
     return loadMeSprites()
         .then(sprite => {
             const me = new Entity();
-            me.size.set(18,32);
+            me.size.set(16,32);
 
             me.addTrait(new Jump());
             me.addTrait(new Go());
