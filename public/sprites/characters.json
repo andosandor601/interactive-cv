@@ -2,8 +2,20 @@
     "imageURL": "/img/characters.png",
     "frames": [
         {
-            "name": "me",
-            "rect": [2, 0, 18, 35]
+            "name": "idle",
+            "rect": [76, 0, 16, 35]
+        },
+        {
+            "name": "run-1",
+            "rect": [96, 0, 16, 35]
+        },
+        {
+            "name": "run-2",
+            "rect": [114, 0, 16, 35]
+        },
+        {
+            "name": "run-3",
+            "rect": [131, 0, 16, 35]
         }
     ]
 }
