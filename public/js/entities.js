@@ -13,10 +13,10 @@ export function createMe() {
             me.addTrait(new Jump());
             me.addTrait(new Go());
 
-            const runAnim = createAnim(['run-1', 'run-2', 'run-3'], 10);
+            const runAnim = createAnim(['run-1', 'run-2', 'run-3'], 8);
 
             function routeFrame(me) {
-                if (me.go.dir !== 0) {
+                if (me.go.distance > 0) {
                     return runAnim(me.go.distance);
                 }
                 return 'idle';

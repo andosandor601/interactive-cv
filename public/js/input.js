@@ -1,22 +1,22 @@
 import Keyboard from './keyboardState.js';
 
-export function setupKeyboard(entity) {
+export function setupKeyboard(me) {
     const input = new Keyboard();
 
     input.addMapping('ArrowUp', keyState => {
         if (keyState) {
-            entity.jump.start();
+            me.jump.start();
         } else {
-            entity.jump.canceled();
+            me.jump.canceled();
         }
     });
 
     input.addMapping('ArrowRight', keyState => {
-        entity.go.dir = keyState;
+        me.go.dir += keyState ? 1 : -1;
     });
 
     input.addMapping('ArrowLeft', keyState => {
-        entity.go.dir = -keyState;
+        me.go.dir += keyState ? -1 : 1;
     });
 
     return input;

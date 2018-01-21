@@ -1,7 +1,6 @@
 import Timer from './timer.js';
 import { loadLevel } from './loaders.js';
 import { createMe } from './entities.js';
-import { createCollisionLayer } from './layers.js';
 import { setupKeyboard } from './input.js';
 
 const canvas = document.getElementById('screen');
@@ -18,8 +17,6 @@ Promise.all([
         level.entities.add(me);
 
         const input = setupKeyboard(me);
-
-        //level.comp.layers.push(createCollisionLayer(level));
 
         input.listenTo(window);
 
