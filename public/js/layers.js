@@ -1,11 +1,16 @@
-export function createBackgroundLayer(level, sprites) {
+import TileResolver from "./tileResolver.js";
+
+export function createBackgroundLayer(level, tiles, sprites) {
+    const resolver = new TileResolver(tiles);
+
     const buffer = document.createElement('canvas');
     buffer.width = 320;
     buffer.height = 240;
 
     const context = buffer.getContext('2d');
 
-    level.tiles.forEach((tile, x, y) => {
+    tiles.forEach((tile, x, y) => {
+        context.clearRect(0, 0, buffer.width, buffer.length);
         sprites.drawTile(tile.name, context, x, y);
     });
 
