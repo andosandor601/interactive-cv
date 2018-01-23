@@ -16,7 +16,7 @@ export default class Jump extends Trait {
         this.requestTime = this.gracePeriod;
     }
 
-    canceled() {
+    canceled(entity) {
         this.engageTime = 0;
         this.requestTime = 0;
     }
@@ -25,7 +25,7 @@ export default class Jump extends Trait {
         if (side === Sides.BOTTOM) {
             this.ready = true;
         } else if (side === Sides.TOP) {
-            this.canceled();
+            this.canceled(entity);
         }
     }
 

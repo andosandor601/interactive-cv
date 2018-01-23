@@ -17,5 +17,17 @@
             "name": "run-3",
             "rect": [131, 0, 16, 35]
         }
+    ],
+
+    "animations": [
+        {
+            "name": "run",
+            "frameLen": 8,
+            "frames": [
+                "run-1",
+                "run-2",
+                "run-3"
+            ]
+        }
     ]
 }
