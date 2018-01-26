@@ -85,5 +85,16 @@
                 }
             ]
         }
-    }
+    },
+
+    "items": [
+        {
+            "name": "pacifier",
+            "pos": [220,0]
+        },
+        {
+            "name": "blackRook",
+            "pos": [120, 0]
+        }
+    ]
 }

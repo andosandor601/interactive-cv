@@ -1,0 +1,13 @@
+{
+    "imageURL": "/img/items.png",
+    "frames": [
+        {
+            "name": "pacifier",
+            "rect": [0, 0, 16, 16]
+        },
+        {
+            "name": "blackRook",
+            "rect": [16, 0, 16, 16]
+        }
+    ]
+}
