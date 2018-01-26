@@ -1,10 +1,21 @@
-import Entity from '../entity.js';
+import Entity, {Trait} from '../entity.js';
 import Falling from '../traits/Falling.js';
 import { loadSpriteSheet } from '../loaders.js';
 
 export function loadBlackRook() {
     return loadSpriteSheet("items")
         .then(createItemFactory);
+}
+
+class Behaviour extends Trait {
+    constructor() {
+        super('behaviour');
+    }
+
+    collides(us, them) {
+        //valójában itt majd eltüntetjük az entity-t és növeljük vagy csökkentjük a számlálót/progressionbart
+        us.falling.speed = 0;
+    }
 }
 
 function createItemFactory(sprite) {
@@ -18,6 +29,7 @@ function createItemFactory(sprite) {
         BlackRook.size.set(16, 16);
 
         BlackRook.addTrait(new Falling());
+        BlackRook.addTrait(new Behaviour());
 
         BlackRook.draw = drawBlackRook;
 

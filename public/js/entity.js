@@ -1,4 +1,5 @@
 import { Vec2 } from './math.js';
+import BoundingBox from './boundingBox.js'
 
 export const Sides = {
     TOP: Symbol('top'),
@@ -10,12 +11,16 @@ export class Trait {
         this.NAME = name;
     }
 
+    collides(us, them){
+        
+    }
+
     obstruct() {
 
     }
 
     update() {
-        console.warn('UNhandled update call in Trait');
+        
     }
 }
 
@@ -24,6 +29,8 @@ export default class Entity {
         this.pos = new Vec2(0, 0);
         this.vel = new Vec2(0, 0);
         this.size = new Vec2(0, 0);
+        this.offset = new Vec2(0, 0);
+        this.bounds = new BoundingBox(this.pos, this.size, this.offset);
         this.lifeTime = 0;
 
         this.traits = [];
@@ -32,6 +39,12 @@ export default class Entity {
     addTrait(trait) {
         this.traits.push(trait);
         this[trait.NAME] = trait;
+    }
+
+    collides(candidate) {
+        this.traits.forEach(trait => {
+            trait.collides(this, candidate);
+        });
     }
 
     obstruct(side) {
