@@ -1,5 +1,6 @@
-import Entity, {Trait} from '../entity.js';
+import Entity, { Trait } from '../entity.js';
 import Falling from '../traits/Falling.js';
+import Killable from '../traits/Killable.js';
 import { loadSpriteSheet } from '../loaders.js';
 
 export function loadBlackRook() {
@@ -12,9 +13,15 @@ class Behaviour extends Trait {
         super('behaviour');
     }
 
+    obstruct(us, side){
+        us.falling.landed = true;
+    }
+
     collides(us, them) {
-        //valójában itt majd eltüntetjük az entity-t és növeljük vagy csökkentjük a számlálót/progressionbart
-        us.falling.speed = 0;
+        // növeljük vagy csökkentjük a számlálót/progressionbart
+        if (them.hit && us.killable) {
+            us.killable.kill(us);
+        }
     }
 }
 
@@ -30,6 +37,7 @@ function createItemFactory(sprite) {
 
         BlackRook.addTrait(new Falling());
         BlackRook.addTrait(new Behaviour());
+        BlackRook.addTrait(new Killable());
 
         BlackRook.draw = drawBlackRook;
 

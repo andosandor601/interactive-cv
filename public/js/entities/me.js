@@ -1,6 +1,7 @@
 import Entity from '../entity.js';
 import Jump from '../traits/Jump.js';
 import Go from '../traits/Go.js';
+import Hit from '../traits/Hit.js';
 import { loadSpriteSheet } from '../loaders.js';
 
 export function loadMe() {
@@ -29,6 +30,7 @@ function createMeFactory(sprite) {
 
         me.addTrait(new Jump());
         me.addTrait(new Go());
+        me.addTrait(new Hit());
 
         me.draw = drawMe;
 

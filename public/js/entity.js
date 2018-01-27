@@ -53,11 +53,10 @@ export default class Entity {
         });
     }
 
-    update(deltaTime) {
+    update(deltaTime, level) {
         this.traits.forEach(trait => {
-            trait.update(this, deltaTime);
+            trait.update(this, deltaTime, level);
         });
-        //console.log(this.vel.y);
         this.lifeTime += deltaTime;
     }
 }
