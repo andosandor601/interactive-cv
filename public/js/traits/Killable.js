@@ -13,6 +13,7 @@ export default class Killable extends Trait {
     }
 
     kill(entity, level) {
+        //TODO: additional effects like add or minus points
         this.dead = true;
     }
 } 

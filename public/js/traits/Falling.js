@@ -28,9 +28,4 @@ export default class Falling extends Trait {
             entity.vel.y = this.speed;
         }   
     }
-
-    delete(entity, level) {
-        //TODO: additional effects like add or minus points
-        level.entities.delete(entity);
-    }
 } 

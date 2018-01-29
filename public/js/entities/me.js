@@ -3,6 +3,7 @@ import Jump from '../traits/Jump.js';
 import Go from '../traits/Go.js';
 import Hit from '../traits/Hit.js';
 import { loadSpriteSheet } from '../loaders.js';
+import Physics from '../traits/Physics.js';
 
 export function loadMe() {
     return loadSpriteSheet("bigger_me")
@@ -28,6 +29,7 @@ function createMeFactory(sprite) {
         const me = new Entity();
         me.size.set(16, 32);
 
+        me.addTrait(new Physics());
         me.addTrait(new Jump());
         me.addTrait(new Go());
         me.addTrait(new Hit());

@@ -2,27 +2,12 @@ import Entity, { Trait } from '../entity.js';
 import Falling from '../traits/Falling.js';
 import Killable from '../traits/Killable.js';
 import { loadSpriteSheet } from '../loaders.js';
+import Physics from '../traits/Physics.js';
+import Behaviour from '../traits/Behaviour.js';
 
 export function loadBlackRook() {
     return loadSpriteSheet("items")
         .then(createItemFactory);
-}
-
-class Behaviour extends Trait {
-    constructor() {
-        super('behaviour');
-    }
-
-    obstruct(us, side){
-        us.falling.landed = true;
-    }
-
-    collides(us, them) {
-        // növeljük vagy csökkentjük a számlálót/progressionbart
-        if (them.hit && us.killable) {
-            us.killable.kill(us);
-        }
-    }
 }
 
 function createItemFactory(sprite) {
@@ -35,6 +20,7 @@ function createItemFactory(sprite) {
         const BlackRook = new Entity();
         BlackRook.size.set(16, 16);
 
+        BlackRook.addTrait(new Physics());
         BlackRook.addTrait(new Falling());
         BlackRook.addTrait(new Behaviour());
         BlackRook.addTrait(new Killable());

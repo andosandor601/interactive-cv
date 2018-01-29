@@ -1,6 +1,9 @@
 import Entity from '../entity.js';
 import Falling from '../traits/Falling.js';
 import { loadSpriteSheet } from '../loaders.js';
+import Physics from '../traits/Physics.js';
+import Killable from '../traits/Killable.js';
+import Behaviour from '../traits/Behaviour.js';
 
 export function loadPacifier() {
     return loadSpriteSheet("items")
@@ -17,7 +20,10 @@ function createItemFactory(sprite) {
         const pacifier = new Entity();
         pacifier.size.set(16, 16);
 
+        pacifier.addTrait(new Physics());
         pacifier.addTrait(new Falling());
+        pacifier.addTrait(new Killable());
+        pacifier.addTrait(new Behaviour());
 
         pacifier.draw = drawPacifier;
 

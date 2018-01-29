@@ -9,7 +9,7 @@ export default class Jump extends Trait {
         this.velocity = 200;
         this.engageTime = 0;
         this.requestTime = 0;
-        this.gracePeriod = 0.3;
+        this.gracePeriod = 0.2;
     }
 
     start() {
