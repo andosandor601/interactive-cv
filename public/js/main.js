@@ -3,18 +3,8 @@ import { createLevelLoader } from './loaders/level.js';
 import { loadFont } from './loaders/font.js';
 import { setupKeyboard } from './input.js';
 import { loadEntities } from './entities.js';
-import {createDashboardLayer} from './layers/dashboard.js';
+import { createDashboardLayer } from './layers/dashboard.js';
 import Entity from './entity.js';
-import PlayerController from './traits/PlayerController.js';
-
-function createPlayerEnv(playerEntity) {
-    const playerEnv = new Entity();  
-    const playerControl = new PlayerController();    
-    playerControl.startPos.set(120, 120);
-    playerControl.setPlayer(playerEntity);
-    playerEnv.addTrait(playerControl);
-    return playerEnv;
-}
 
 
 async function main(canvas) {
@@ -27,10 +17,9 @@ async function main(canvas) {
     const level = await loadLevel('1-1');
 
     const me = entityFactory.me();
-    const playerEnv = createPlayerEnv(me);
-    level.entities.add(playerEnv);
+    level.entities.add(me);
 
-    level.comp.layers.push(createDashboardLayer(font, playerEnv));
+    level.comp.layers.push(createDashboardLayer(font, me));
 
     const input = setupKeyboard(me);
 
@@ -41,7 +30,6 @@ async function main(canvas) {
     timer.update = function update(deltaTime) {
         level.update(deltaTime);
         level.comp.draw(context);
-        
     }
     timer.start();
 }

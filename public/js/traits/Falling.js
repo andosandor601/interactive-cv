@@ -18,11 +18,11 @@ export default class Falling extends Trait {
         if (this.landed) {
             this.landingTime += deltaTime;
             if (this.landingTime > this.removeAfter && entity.killable) {
-                entity.killable.kill();
+                entity.killable.kill(entity, level);
             }
         }
         else if (this.dead && entity.killable) {
-            entity.killable.kill();
+            entity.killable.kill(entity, level);
         }
         else {
             entity.vel.y = this.speed;

@@ -5,14 +5,14 @@ export default class Behaviour extends Trait {
         super('behaviour');
     }
 
-    obstruct(us, side){
+    obstruct(us, side) {
         us.falling.landed = true;
     }
 
-    collides(us, them) {
-        // növeljük vagy csökkentjük a számlálót/progressionbart
-        if (them.hit && us.killable) {
-            us.killable.kill(us);
+    collides(us, them, level) {
+        if (them.hit && us.killable && them.characterLogic) {
+            us.killable.kill(us, level);
+            them.characterLogic.score += 30;            
         }
     }
 }

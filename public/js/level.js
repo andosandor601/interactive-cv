@@ -20,7 +20,7 @@ export default class Level {
     update(deltaTime) {
         this.entities.forEach(entity => {
             entity.update(deltaTime, this);
-            this.EntityCollider.check(entity);
+            this.EntityCollider.check(entity, this);
         });
     }
 }

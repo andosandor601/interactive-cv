@@ -3,15 +3,14 @@ export default class EntityCollider {
         this.entities = entities;
     }
 
-    check(subject) {
+    check(subject, level) {
         this.entities.forEach(candidate => {
             if (subject === candidate) {
                 return;
             }
-
             if (subject.bounds.overlaps(candidate.bounds)) {
-                subject.collides(candidate);
-                candidate.collides(subject);
+                subject.collides(candidate, level);
+                candidate.collides(subject, level);
             }
         });
     }

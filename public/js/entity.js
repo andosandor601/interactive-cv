@@ -31,7 +31,6 @@ export default class Entity {
         this.size = new Vec2(0, 0);
         this.offset = new Vec2(0, 0);
         this.bounds = new BoundingBox(this.pos, this.size, this.offset);
-        this.lifeTime = 0;
 
         this.traits = [];
     }
@@ -41,9 +40,9 @@ export default class Entity {
         this[trait.NAME] = trait;
     }
 
-    collides(candidate) {
+    collides(candidate, level) {
         this.traits.forEach(trait => {
-            trait.collides(this, candidate);
+            trait.collides(this, candidate, level);
         });
     }
 
@@ -61,6 +60,5 @@ export default class Entity {
         this.traits.forEach(trait => {
             trait.update(this, deltaTime, level);
         });
-        this.lifeTime += deltaTime;
     }
 }
