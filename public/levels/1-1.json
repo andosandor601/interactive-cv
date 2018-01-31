@@ -90,11 +90,11 @@
     "items": [
         {
             "name": "pacifier",
-            "pos": [220,0]
+            "score": 30
         },
         {
             "name": "blackRook",
-            "pos": [120, 0]
+            "score": 30
         }
     ]
 }
