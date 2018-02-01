@@ -5,6 +5,7 @@ import { setupKeyboard } from './input.js';
 import { loadEntities } from './entities.js';
 import { createDashboardLayer } from './layers/dashboard.js';
 import Entity from './entity.js';
+import { loadItems } from './loaders/item.js';
 
 
 async function main(canvas) {
@@ -17,7 +18,7 @@ async function main(canvas) {
     const level = await loadLevel('1-1');
 
     const me = entityFactory.me();
-    level.entities.add(me);
+    level.entities.push(me);
 
     level.comp.layers.push(createDashboardLayer(font, me));
 
@@ -27,9 +28,14 @@ async function main(canvas) {
 
     const timer = new Timer(1 / 60);
 
+    const itemGenarator = loadItems(level);
+    
+
     timer.update = function update(deltaTime) {
         level.update(deltaTime);
         level.comp.draw(context);
+        //TODO: if level is not completed
+        itemGenarator.randomGenerateNewItem(deltaTime, entityFactory);
     }
     timer.start();
 }

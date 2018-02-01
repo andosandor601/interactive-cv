@@ -8,8 +8,8 @@ export default class Characterlogic extends Trait {
     }
 
     update(entity, deltaTime, level) {
-        if (!level.entities.has(entity)) {
-            level.entities.add(entity);
+        if (!level.entities.includes(entity)) {
+            level.entities.push(entity);
         }
     }
 }

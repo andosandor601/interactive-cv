@@ -21,16 +21,14 @@ function setupBackgrund(levelSpec, level, backgroundSprites) {
 }
 
 function setupItems(levelSpec, level, entityFactory) {
-
-    levelSpec.items.forEach(({ name, score}) => {
+    levelSpec.items.forEach(({ name, score }) => {
         const createItem = entityFactory[name];
         const item = createItem();
-        //static canvas width => dynamic width in json
-        item.pos.set(Math.random() * (320 - item.size.x), 0);
+        item.name = name;
         item.score = score;
-        level.entities.add(item);
+        level.items.add(item);
     });
-    
+
     const spriteLayer = createSpriteLayer(level.entities);
     level.comp.layers.push(spriteLayer);
 }

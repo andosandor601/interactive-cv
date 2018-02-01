@@ -7,7 +7,9 @@ export default class Level {
         this.gravity = 1500;
 
         this.comp = new Compositor();
-        this.entities = new Set();
+        this.entities = new Array();
+
+        this.items = new Set();
 
         this.tileCollider = null;
         this.EntityCollider = new EntityCollider(this.entities);
