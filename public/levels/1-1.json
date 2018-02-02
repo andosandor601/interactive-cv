@@ -90,11 +90,39 @@
     "items": [
         {
             "name": "pacifier",
-            "score": 30
+            "score": 10
         },
         {
             "name": "blackRook",
+            "score": 20
+        },
+        {
+            "name": "whiteRook",
+            "score": 20
+        },
+        {
+            "name": "starToy",
+            "score": 20
+        },
+        {
+            "name": "football",
+            "score": 20
+        },
+        {
+            "name": "smile",
             "score": 30
+        },
+        {
+            "name": "cry",
+            "score": -30
+        },
+        {
+            "name": "beer",
+            "score": -30
+        },
+        {
+            "name": "brusselsSprout",
+            "score": -50
         }
     ]
 }

@@ -8,6 +8,34 @@
         {
             "name": "blackRook",
             "rect": [16, 0, 16, 16]
+        },
+        {
+            "name": "whiteRook",
+            "rect": [32, 0, 16, 16]
+        },
+        {
+            "name": "starToy",
+            "rect": [48, 0, 16, 16]
+        },
+        {
+            "name": "football",
+            "rect": [64, 0, 16, 16]
+        },
+        {
+            "name": "smile",
+            "rect": [80, 0, 16, 16]
+        },
+        {
+            "name": "cry",
+            "rect": [96, 0, 16, 16]
+        },
+        {
+            "name": "beer",
+            "rect": [112, 0, 16, 16]
+        },
+        {
+            "name": "brusselsSprout",
+            "rect": [128, 0, 16, 16]
         }
     ]
 }

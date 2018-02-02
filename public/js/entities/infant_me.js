@@ -2,8 +2,8 @@ import Entity from '../entity.js';
 import Falling from '../traits/Falling.js';
 import { loadSpriteSheet } from '../loaders.js';
 
-export function loadChildMe() {
-    return loadSpriteSheet("child_me")
+export function loadInfantMe() {
+    return loadSpriteSheet("infant_me")
         .then(createMeFactory);
 }
 
