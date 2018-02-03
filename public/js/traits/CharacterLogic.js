@@ -5,6 +5,7 @@ export default class Characterlogic extends Trait {
     constructor() {
         super('characterLogic');
         this.score = 0;
+        this.text = "";
     }
 
     update(entity, deltaTime, level) {

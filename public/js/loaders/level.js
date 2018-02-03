@@ -21,9 +21,10 @@ function setupBackgrund(levelSpec, level, backgroundSprites) {
 }
 
 function setupItems(levelSpec, level, entityFactory) {
-    levelSpec.items.forEach(({ name, score }) => {
+    levelSpec.items.forEach(({ name, score, text }) => {
         const createItem = entityFactory[name];
         const item = createItem();
+        item.text = text;
         item.name = name;
         item.score = score;
         level.items.add(item);

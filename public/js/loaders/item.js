@@ -27,6 +27,7 @@ export class GenerateItems{
         //static canvas width => dynamic width in json
         item.pos.set(Math.random() * (320 - item.size.x), 0);
         item.score = items[rnd].score;
+        item.text = items[rnd].text;
         level.entities.push(item);
     
         const spriteLayer = createSpriteLayer(level.entities);

@@ -8,7 +8,7 @@
                     "name": "sky",
                     "ranges": [
                         [
-                            0, 20,
+                            0, 26,
                             0, 14
                         ]
                     ]
@@ -18,7 +18,7 @@
                     "type": "ground",
                     "ranges": [
                         [
-                            0, 20,
+                            0, 26,
                             13, 14
                         ],
                         [
@@ -90,39 +90,48 @@
     "items": [
         {
             "name": "pacifier",
-            "score": 10
+            "score": 10,
+            "text": "Finally a pacifier"
         },
         {
             "name": "blackRook",
-            "score": 20
+            "score": 20,
+            "text": "I love chess"
         },
         {
             "name": "whiteRook",
-            "score": 20
+            "score": 20,
+            "text": "I love chess"
         },
         {
             "name": "starToy",
-            "score": 20
+            "score": 20,
+            "text": "Hey a toy"
         },
         {
             "name": "football",
-            "score": 20
+            "score": 20,
+            "text": "Oh a football"
         },
         {
             "name": "smile",
-            "score": 30
+            "score": 30,
+            "text": "Hahahaha"
         },
         {
             "name": "cry",
-            "score": -30
+            "score": -30,
+            "text": "Waa waa waa"
         },
         {
             "name": "beer",
-            "score": -30
+            "score": -40,
+            "text": "Beer is not for an infant"
         },
         {
             "name": "brusselsSprout",
-            "score": -50
+            "score": -50,
+            "text": "I do not like brussels sprouts"
         }
     ]
 }
