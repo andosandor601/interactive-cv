@@ -20,8 +20,8 @@ export default class TileCollider {
             x, x,
             entity.pos.y, entity.pos.y + entity.size.y);
 
-        if (entity.pos.x > 320 - entity.size.x) {
-            entity.pos.x = 320 - entity.size.x;
+        if (entity.pos.x > 416 - entity.size.x) {
+            entity.pos.x = 416 - entity.size.x;
             entity.vel.x = 0;
         } else if (entity.pos.x <= 0) {
             entity.pos.x = 0;

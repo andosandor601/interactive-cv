@@ -1,6 +1,6 @@
 import TileResolver from "../tileResolver.js";
 
-export function createSpriteLayer(entities, width = 320, height = 240) {
+export function createSpriteLayer(entities, width = 416, height = 240) {
     const spriteBuffer = document.createElement('canvas');
     spriteBuffer.width = width;
     spriteBuffer.height = height;

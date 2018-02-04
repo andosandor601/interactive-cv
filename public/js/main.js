@@ -17,7 +17,7 @@ async function main(canvas) {
     const loadLevel = await createLevelLoader(entityFactory);
     const level = await loadLevel('1-1');
 
-    const me = entityFactory.me();
+    const me = entityFactory.infantMe();
     level.entities.push(me);
 
     level.comp.layers.push(createDashboardLayer(font, me));

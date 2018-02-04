@@ -25,7 +25,7 @@ export class GenerateItems{
         const createItem = entityFactory[items[rnd].name];
         const item = createItem();
         //static canvas width => dynamic width in json
-        item.pos.set(Math.random() * (320 - item.size.x), 0);
+        item.pos.set(Math.random() * (416 - item.size.x), 0);
         item.score = items[rnd].score;
         item.text = items[rnd].text;
         level.entities.push(item);
