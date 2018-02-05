@@ -10,10 +10,8 @@ export default class Behaviour extends Trait {
     }
 
     collides(us, them, level) {
-        if (them.hit && us.killable && them.characterLogic) {
-            us.killable.kill(us, level);
-            them.characterLogic.score += us.score;
-            them.characterLogic.text = us.text;          
+        if (them.hit && us.killable) {
+            us.killable.kill(us, level);         
         }
     }
 }
