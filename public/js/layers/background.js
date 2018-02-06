@@ -1,11 +1,12 @@
 import TileResolver from "../tileResolver.js";
+import { getCanvasSize } from "../canvas.js";
 
 export function createBackgroundLayer(level, tiles, sprites) {
     const resolver = new TileResolver(tiles);
 
     const buffer = document.createElement('canvas');
-    buffer.width = 416;
-    buffer.height = 240;
+    buffer.width = getCanvasSize().width;
+    buffer.height = getCanvasSize().height;
 
     const context = buffer.getContext('2d');
 

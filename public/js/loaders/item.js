@@ -1,4 +1,5 @@
 import { createSpriteLayer } from '../layers/sprite.js';
+import { getCanvasSize } from '../canvas.js';
 
 export function loadItems(level){
     return new GenerateItems(level);
@@ -24,13 +25,9 @@ export class GenerateItems{
         const rnd = Math.floor(Math.random() * (nOfItems));
         const createItem = entityFactory[items[rnd].name];
         const item = createItem();
-        //static canvas width => dynamic width in json
-        item.pos.set(Math.random() * (416 - item.size.x), 0);
+        item.pos.set(Math.random() * (getCanvasSize().width - item.size.x), 0);
         item.score = items[rnd].score;
         item.text = items[rnd].text;
         level.entities.push(item);
-    
-        const spriteLayer = createSpriteLayer(level.entities);
-        level.comp.layers.push(spriteLayer);
     }
 }
