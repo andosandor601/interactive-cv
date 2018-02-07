@@ -1,6 +1,7 @@
 import Compositor from './compositor.js';
 import TileCollider from './tileCollider.js';
 import EntityCollider from './entityCollider.js';
+import { createWelcomeMessage } from './layers/dashboard.js';
 
 export default class Level {
     constructor() {
@@ -8,21 +9,46 @@ export default class Level {
 
         this.comp = new Compositor();
         this.entities = new Array();
+        this.messages = new Array();
 
         this.items = new Set();
 
         this.tileCollider = null;
         this.EntityCollider = new EntityCollider(this.entities);
+
+        this.start = true;
+        this.time = 0;
+        this.message = {};
     }
 
-    setCollisionGrid(matrix){
+    setCollisionGrid(matrix) {
         this.tileCollider = new TileCollider(matrix);
     }
 
+    startMethod(deltaTime) {
+        this.time += deltaTime;
+        if (this.time > 10) {
+            const index = this.comp.layers.indexOf(this.message);
+            this.comp.layers.splice(index, 1);
+            this.start = false;
+        }
+    }
+
     update(deltaTime) {
-        this.entities.forEach(entity => {
-            entity.update(deltaTime, this);
-            this.EntityCollider.check(entity, this);
-        });
+        if (this.start) {
+            this.startMethod(deltaTime);
+        } else {
+            this.entities.forEach(entity => {
+                entity.update(deltaTime, this);
+                this.EntityCollider.check(entity, this);
+            });
+        }
+    }
+
+    showWelcomeMessage(font, context) {
+        this.message = createWelcomeMessage(font, context, this.messages);
+        if (!this.comp.layers.includes(this.message)) {
+            this.comp.layers.push(this.message);
+        }
     }
 }

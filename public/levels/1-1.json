@@ -133,5 +133,28 @@
             "score": -50,
             "text": "I do not like brussels sprouts"
         }
+    ],
+
+    "messages": [
+        {
+            "text": "Date 07 05 1995",
+            "x": 70,
+            "y": 40
+        },
+        {
+            "text": "Use arrow keys for move",
+            "x": 70,
+            "y": 100
+        },
+        {
+            "text": "and pick up the items",
+            "x": 70,
+            "y": 110
+        },
+        {
+            "text": "Earn 300 points",
+            "x": 70,
+            "y": 120
+        }
     ]
 }

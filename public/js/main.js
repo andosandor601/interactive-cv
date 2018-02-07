@@ -29,13 +29,18 @@ async function main(canvas) {
     const timer = new Timer(1 / 60);
 
     const itemGenarator = loadItems(level);
-    
 
+    
+    
     timer.update = function update(deltaTime) {
         level.update(deltaTime);
-        level.comp.draw(context);
-        //TODO: if level is not completed
-        itemGenarator.randomGenerateNewItem(deltaTime, entityFactory);
+        if (level.start){
+            level.showWelcomeMessage(font, context);
+        }else{
+            level.comp.draw(context);
+            //TODO: if level is not completed
+            itemGenarator.randomGenerateNewItem(deltaTime, entityFactory);
+        }
     }
     timer.start();
 }

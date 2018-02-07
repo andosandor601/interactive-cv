@@ -34,6 +34,12 @@ function setupItems(levelSpec, level, entityFactory) {
     level.comp.layers.push(spriteLayer);
 }
 
+function setupMessages(levelSpec, level) {
+    levelSpec.messages.forEach((message) => {
+        level.messages.push(message);
+    })
+}
+
 export function createLevelLoader(entityFactory) {
     return function loadLevel(name) {
         return loadJSON(`levels/${name}.json`)
@@ -47,6 +53,7 @@ export function createLevelLoader(entityFactory) {
                 setupCollision(levelSpec, level);
                 setupBackgrund(levelSpec, level, backgroundSprites);
                 setupItems(levelSpec, level, entityFactory);
+                setupMessages(levelSpec, level);
 
                 return level;
             });

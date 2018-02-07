@@ -11,3 +11,9 @@ export function createDashboardLayer(font, player) {
         font.print(text, context, 100, LINE1);
     };
 }
+
+export function createWelcomeMessage(font, context, messages){
+    messages.forEach((message) => {
+        font.print(message.text, context, message.x, message.y);
+    });
+}
