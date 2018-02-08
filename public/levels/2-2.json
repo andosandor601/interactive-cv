@@ -20,24 +20,6 @@
                         [
                             0, 26,
                             13, 14
-                        ],
-                        [
-                            5, 3,
-                            9, 1
-                        ],
-                        [
-                            29, 5
-                        ],
-                        [
-                            5, 7, 9
-                        ],
-                        [
-                            12, 6,
-                            11, 1
-                        ],
-                        [
-                            2, 1,
-                            11, 1
                         ]
                     ]
                 }
@@ -89,70 +71,30 @@
 
     "items": [
         {
-            "name": "pacifier",
-            "score": 10,
-            "text": "Finally a pacifier"
-        },
-        {
-            "name": "blackRook",
-            "score": 20,
-            "text": "I love chess"
-        },
-        {
-            "name": "whiteRook",
-            "score": 20,
-            "text": "I love chess"
-        },
-        {
-            "name": "starToy",
-            "score": 20,
-            "text": "Hey a toy"
-        },
-        {
-            "name": "football",
-            "score": 20,
-            "text": "Oh a football"
-        },
-        {
-            "name": "smile",
-            "score": 30,
-            "text": "Hahahaha"
-        },
-        {
-            "name": "cry",
-            "score": -30,
-            "text": "Waa waa waa"
-        },
-        {
-            "name": "beer",
-            "score": -40,
-            "text": "Beer is not for an infant"
-        },
-        {
-            "name": "brusselsSprout",
-            "score": -50,
-            "text": "I do not like brussels sprouts"
+            "name": "squareAcademicCap",
+            "score": 0,
+            "text": "Bow wow wow yippie yo yippie yay"
         }
     ],
 
     "messages": [
         {
-            "text": "Date 07 05 1995",
+            "text": "Congratulation",
             "x": 70,
             "y": 40
         },
         {
-            "text": "Use arrow keys for move",
+            "text": "You finished the game",
             "x": 70,
             "y": 100
         },
         {
-            "text": "and pick up the items",
+            "text": "and earned the",
             "x": 70,
             "y": 110
         },
         {
-            "text": "Earn 300 points to grow up",
+            "text": "Square Academic Cap",
             "x": 70,
             "y": 120
         }

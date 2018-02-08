@@ -29,7 +29,7 @@ function createMeFactory(sprite) {
     return function createMe() {
         const me = new Entity();
         me.size.set(16, 22);
-        me.pos.set(120, 120);
+        me.pos.set(120, 0);
 
         me.addTrait(new Physics());
         me.addTrait(new Jump());

@@ -9,6 +9,13 @@ import { loadSmile } from './entities/smile.js';
 import { loadCry } from './entities/cry.js';
 import { loadBeer } from './entities/beer.js';
 import { loadBrusselsSprout } from './entities/brusselsSprout.js';
+import { loadBook } from './entities/book.js';
+import { loadNote } from './entities/note.js';
+import { loadClock } from './entities/clock.js';
+import { loadJava } from './entities/java.js';
+import { loadPython } from './entities/python.js';
+import { loadBed } from './entities/bed.js';
+import { loadSquareAcademicCap } from './entities/squareAcademicCap.js';
 
 export function loadEntities() {
     const entityFactories = {};
@@ -28,7 +35,16 @@ export function loadEntities() {
         loadSmile().then(addAs('smile')),
         loadCry().then(addAs('cry')),
         loadBeer().then(addAs('beer')),
-        loadBrusselsSprout().then(addAs('brusselsSprout'))
+        loadBrusselsSprout().then(addAs('brusselsSprout')),
+        loadBook().then(addAs('book')),
+        loadNote().then(addAs('note')),
+        loadClock().then(addAs('clock')),
+        loadJava().then(addAs('java')),
+        loadPython().then(addAs('python')),
+        loadBed().then(addAs('bed')),
+        loadSquareAcademicCap().then(addAs('squareAcademicCap')),
+        loadCry().then(addAs('cry')),
+        loadBeer().then(addAs('beer')),
     ])
         .then(() => entityFactories);
 }

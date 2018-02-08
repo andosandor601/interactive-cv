@@ -12,11 +12,11 @@ export function setupKeyboard(me) {
     });
 
     input.addMapping('ArrowRight', keyState => {
-        me.go.dir += keyState ? 1 : -1;
+        me.go.dir = keyState ? 1 : 0;
     });
 
     input.addMapping('ArrowLeft', keyState => {
-        me.go.dir += keyState ? -1 : 1;
+        me.go.dir = keyState ? -1 : 0;
     });
 
     return input;

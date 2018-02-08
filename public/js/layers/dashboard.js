@@ -1,9 +1,9 @@
-export function createDashboardLayer(font, player) {
+export function createDashboardLayer(font, player, level) {
     const LINE1 = font.size;
     const LINE2 = font.size * 3;
 
     return function drawDashboard(context) {
-        const score = player.characterLogic.score;
+        const score = level.score;
         const text = player.characterLogic.text;
 
         font.print('LEVEL 1', context, 16, LINE1);

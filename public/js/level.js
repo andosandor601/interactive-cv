@@ -19,6 +19,10 @@ export default class Level {
         this.start = true;
         this.time = 0;
         this.message = {};
+
+        this.isCompleted = false;
+
+        this.score = 0;
     }
 
     setCollisionGrid(matrix) {
@@ -42,6 +46,10 @@ export default class Level {
                 entity.update(deltaTime, this);
                 this.EntityCollider.check(entity, this);
             });
+            //TODO score >= 300
+            if (this.score >= 30) {
+                this.isCompleted = true;
+            }
         }
     }
 

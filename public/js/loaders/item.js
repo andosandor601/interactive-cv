@@ -2,10 +2,10 @@ import { createSpriteLayer } from '../layers/sprite.js';
 import { getCanvasSize } from '../canvas.js';
 
 export function loadItems(level){
-    return new GenerateItems(level);
+    return new ItemGenerator(level);
 }
 
-export class GenerateItems{
+export class ItemGenerator{
     constructor(level){
         this.time = 0;
         this.level = level;

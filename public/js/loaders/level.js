@@ -12,7 +12,7 @@ function setupCollision(levelSpec, level) {
     level.setCollisionGrid(colliosionGrid);
 }
 
-function setupBackgrund(levelSpec, level, backgroundSprites) {
+function setupBackground(levelSpec, level, backgroundSprites) {
     levelSpec.layers.forEach(layer => {
         const backgroundGrid = createBackgroundGrid(layer.tiles, levelSpec.patterns);
         const backgroundLayer = createBackgroundLayer(level, backgroundGrid, backgroundSprites);
@@ -51,7 +51,7 @@ export function createLevelLoader(entityFactory) {
                 const level = new Level();
 
                 setupCollision(levelSpec, level);
-                setupBackgrund(levelSpec, level, backgroundSprites);
+                setupBackground(levelSpec, level, backgroundSprites);
                 setupItems(levelSpec, level, entityFactory);
                 setupMessages(levelSpec, level);
 

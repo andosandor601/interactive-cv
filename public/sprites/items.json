@@ -36,6 +36,34 @@
         {
             "name": "brusselsSprout",
             "rect": [128, 0, 16, 16]
+        },
+        {
+            "name": "book",
+            "rect": [0, 16, 16, 16]
+        },
+        {
+            "name": "note",
+            "rect": [16, 16, 16, 16]
+        },
+        {
+            "name": "clock",
+            "rect": [32, 16, 16, 16]
+        },
+        {
+            "name": "java",
+            "rect": [48, 16, 16, 16]
+        },
+        {
+            "name": "python",
+            "rect": [64, 16, 16, 16]
+        },
+        {
+            "name": "squareAcademicCap",
+            "rect": [80, 16, 16, 16]
+        },
+        {
+            "name": "bed",
+            "rect": [96, 16, 16, 16]
         }
     ]
 }

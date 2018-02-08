@@ -89,29 +89,29 @@
 
     "items": [
         {
-            "name": "pacifier",
+            "name": "book",
             "score": 10,
-            "text": "Finally a pacifier"
+            "text": "I have got to read"
         },
         {
-            "name": "blackRook",
+            "name": "note",
             "score": 20,
-            "text": "I love chess"
+            "text": "Clarinet skills are improved"
         },
         {
-            "name": "whiteRook",
+            "name": "clock",
             "score": 20,
-            "text": "I love chess"
+            "text": "Finally got some time"
         },
         {
-            "name": "starToy",
+            "name": "java",
             "score": 20,
-            "text": "Hey a toy"
+            "text": "Java skills are improved"
         },
         {
-            "name": "football",
+            "name": "python",
             "score": 20,
-            "text": "Oh a football"
+            "text": "Python skills are improved"
         },
         {
             "name": "smile",
@@ -124,9 +124,9 @@
             "text": "Waa waa waa"
         },
         {
-            "name": "beer",
+            "name": "bed",
             "score": -40,
-            "text": "Beer is not for an infant"
+            "text": "There is no time for sleep"
         },
         {
             "name": "brusselsSprout",
@@ -137,24 +137,29 @@
 
     "messages": [
         {
-            "text": "Date 07 05 1995",
+            "text": "Date undefined",
             "x": 70,
             "y": 40
         },
         {
-            "text": "Use arrow keys for move",
+            "text": "Congratulation",
             "x": 70,
             "y": 100
         },
         {
-            "text": "and pick up the items",
+            "text": "You finished the first level",
             "x": 70,
             "y": 110
         },
         {
-            "text": "Earn 300 points to grow up",
+            "text": "Earn 300 points to get the",
             "x": 70,
-            "y": 120
+            "y": 130
+        },
+        {
+            "text": "square academic cap",
+            "x": 70,
+            "y": 140
         }
     ]
 }
