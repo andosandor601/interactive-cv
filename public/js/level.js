@@ -21,8 +21,8 @@ export default class Level {
         this.message = {};
 
         this.isCompleted = false;
-
         this.score = 0;
+        this.levelName = "";
     }
 
     setCollisionGrid(matrix) {

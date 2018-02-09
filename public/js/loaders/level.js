@@ -50,6 +50,7 @@ export function createLevelLoader(entityFactory) {
             .then(([levelSpec, backgroundSprites]) => {
                 const level = new Level();
 
+                level.levelName = levelSpec.level;
                 setupCollision(levelSpec, level);
                 setupBackground(levelSpec, level, backgroundSprites);
                 setupItems(levelSpec, level, entityFactory);

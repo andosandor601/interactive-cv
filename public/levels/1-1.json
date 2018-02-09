@@ -1,6 +1,8 @@
 {
     "spriteSheet": "overworld",
 
+    "level": "Level 1-1",
+
     "layers": [
         {
             "tiles": [
@@ -137,7 +139,7 @@
 
     "messages": [
         {
-            "text": "Date 07 05 1995",
+            "text": "Date 07-05-1995",
             "x": 70,
             "y": 40
         },

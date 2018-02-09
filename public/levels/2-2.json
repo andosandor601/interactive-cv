@@ -1,6 +1,8 @@
 {
     "spriteSheet": "overworld",
 
+    "level": "Level 2-2",
+
     "layers": [
         {
             "tiles": [
