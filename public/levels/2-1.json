@@ -21,8 +21,24 @@
                     "ranges": [
                         [
                             0, 26,
-                            13, 14
-                        ],
+                            14
+                        ]
+                    ]
+                },
+                {
+                    "name": "upperGround",
+                    "type": "ground",
+                    "ranges":[
+                        [
+                            0, 26,
+                            13
+                        ]
+                    ]
+                },
+                {
+                    "name": "brick",
+                    "type": "ground",
+                    "ranges":[
                         [
                             5, 3,
                             9, 1
