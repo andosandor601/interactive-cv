@@ -23,8 +23,9 @@ export class ItemGenerator{
         const items = Array.from(level.items);
         const nOfItems = items.length;
         const rnd = Math.floor(Math.random() * (nOfItems));
-        const createItem = entityFactory[items[rnd].name];
+        const createItem = entityFactory['item'];
         const item = createItem();
+        item.name = items[rnd].name;
         item.pos.set(Math.random() * (getCanvasSize().width - item.size.x), 0);
         item.score = items[rnd].score;
         item.text = items[rnd].text;
