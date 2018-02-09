@@ -64,6 +64,7 @@ export function createLevelLoader(entityFactory) {
                 const level = new Level();
 
                 level.levelName = levelSpec.level;
+                level.score = levelSpec.score;
                 
                 setupCollision(levelSpec, level);
                 setupBackground(levelSpec, level, backgroundSprites);

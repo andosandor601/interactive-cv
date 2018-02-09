@@ -21,6 +21,7 @@ export default class Level {
         this.message = {};
 
         this.isCompleted = false;
+        this.actScore = 0;
         this.score = 0;
         this.levelName = "";
     }
@@ -46,8 +47,7 @@ export default class Level {
                 entity.update(deltaTime, this);
                 this.EntityCollider.check(entity, this);
             });
-            //TODO score >= 300
-            if (this.score >= 30) {
+            if (this.actScore >= this.score) {
                 this.isCompleted = true;
             }
         }

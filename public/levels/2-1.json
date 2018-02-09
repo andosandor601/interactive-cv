@@ -5,6 +5,8 @@
 
     "character": "me",
 
+    "score": 300,
+
     "layers": [
         {
             "tiles": [

@@ -29,7 +29,6 @@ export async function manageLevels(canvas) {
                 level.comp.draw(context);
                 itemGenarator.randomGenerateNewItem(deltaTime, entityFactory);
             }
-            return false;
         }
         else {
             if (levelCounter !== 2) {
@@ -38,7 +37,6 @@ export async function manageLevels(canvas) {
                 const character = entityFactory.me();
                 setupCanvas(context);
                 itemGenarator = loadItems(level);
-                return;
             }else{
                 level = await loadLevel('2-2', font);
                 const character = entityFactory.me();

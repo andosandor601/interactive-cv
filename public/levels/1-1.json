@@ -5,6 +5,8 @@
 
     "character": "infantMe",
 
+    "score": 300,
+
     "layers": [
         {
             "tiles": [

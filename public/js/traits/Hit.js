@@ -7,7 +7,7 @@ export default class Hit extends Trait {
 
     collides(us, them, level) {
         if (us.hit && us.characterLogic) {
-            level.score += them.score;
+            level.actScore += them.score;
             us.characterLogic.text = them.text;
         }
     }
