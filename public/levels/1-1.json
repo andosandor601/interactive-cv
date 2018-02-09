@@ -3,6 +3,8 @@
 
     "level": "Level 1-1",
 
+    "character": "infantMe",
+
     "layers": [
         {
             "tiles": [

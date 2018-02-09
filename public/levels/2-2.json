@@ -3,6 +3,8 @@
 
     "level": "Level 2-2",
 
+    "character": "me",
+
     "layers": [
         {
             "tiles": [

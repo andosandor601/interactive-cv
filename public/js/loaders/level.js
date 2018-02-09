@@ -3,6 +3,8 @@ import { Matrix } from '../math.js';
 import { createSpriteLayer } from '../layers/sprite.js';
 import { createBackgroundLayer } from '../layers/background.js'
 import { loadJSON, loadSpriteSheet } from '../loaders.js';
+import { createDashboardLayer } from '../layers/dashboard.js';
+import { setupKeyboard } from '../input.js';
 
 function setupCollision(levelSpec, level) {
     const mergedTiles = levelSpec.layers.reduce((mergedTiles, layerSpec) => {
@@ -34,6 +36,17 @@ function setupItems(levelSpec, level, entityFactory) {
     level.comp.layers.push(spriteLayer);
 }
 
+function setupCharacter(levelSpec, level, entityFactory, font) {
+    const createCharacter = entityFactory[levelSpec.character];
+    const character = createCharacter();
+
+    level.entities.push(character);
+    level.comp.layers.push(createDashboardLayer(font, character, level));
+
+    const input = setupKeyboard(character);
+    input.listenTo(window);
+}
+
 function setupMessages(levelSpec, level) {
     levelSpec.messages.forEach((message) => {
         level.messages.push(message);
@@ -41,7 +54,7 @@ function setupMessages(levelSpec, level) {
 }
 
 export function createLevelLoader(entityFactory) {
-    return function loadLevel(name) {
+    return function loadLevel(name, font) {
         return loadJSON(`levels/${name}.json`)
             .then(levelSpec => Promise.all([
                 levelSpec,
@@ -51,8 +64,10 @@ export function createLevelLoader(entityFactory) {
                 const level = new Level();
 
                 level.levelName = levelSpec.level;
+                
                 setupCollision(levelSpec, level);
                 setupBackground(levelSpec, level, backgroundSprites);
+                setupCharacter(levelSpec, level, entityFactory, font);
                 setupItems(levelSpec, level, entityFactory);
                 setupMessages(levelSpec, level);
 

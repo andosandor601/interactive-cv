@@ -1,10 +1,7 @@
 import Timer from './timer.js';
 import { createLevelLoader } from './loaders/level.js';
 import { loadFont } from './loaders/font.js';
-import { setupKeyboard } from './input.js';
 import { loadEntities } from './entities.js';
-import { createDashboardLayer } from './layers/dashboard.js';
-import Entity from './entity.js';
 import { loadItems } from './loaders/item.js';
 import { getCanvasSize } from './canvas.js';
 
@@ -16,14 +13,11 @@ export async function manageLevels(canvas) {
         loadFont(),
     ]);
     const loadLevel = await createLevelLoader(entityFactory);
-    let level = await loadLevel('1-1');
-    const character = entityFactory.infantMe();
-    setupLevel(level, character, font, context);
+    let level = await loadLevel('1-1', font);    
+    setupCanvas(context);
 
     const timer = new Timer(1 / 60);
-
     let itemGenarator = loadItems(level);
-
     let levelCounter = 1;
 
     timer.update = async function update(deltaTime) {
@@ -40,17 +34,15 @@ export async function manageLevels(canvas) {
         else {
             if (levelCounter !== 2) {
                 levelCounter++;
-                level = null;
-                level = await loadLevel('2-1');
+                level = await loadLevel('2-1', font);
                 const character = entityFactory.me();
-                setupLevel(level, character, font, context);
+                setupCanvas(context);
                 itemGenarator = loadItems(level);
                 return;
             }else{
-                level = null;
-                level = await loadLevel('2-2');
+                level = await loadLevel('2-2', font);
                 const character = entityFactory.me();
-                setupLevel(level, character, font, context);
+                setupCanvas(context);
                 itemGenarator = loadItems(level);
                 return;
             }
@@ -60,13 +52,6 @@ export async function manageLevels(canvas) {
 
 }
 
-async function setupLevel(level, character, font, context) {
+function setupCanvas(context) {
     context.clearRect(0, 0, getCanvasSize().width, getCanvasSize().height);
-
-    level.entities.push(character);
-    level.comp.layers.push(createDashboardLayer(font, character, level));
-
-    let input = setupKeyboard(character);
-    input.listenTo(window);
-
 }
