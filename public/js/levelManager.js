@@ -32,11 +32,12 @@ export async function manageLevels(canvas) {
         }
         else {
             if (levelCounter !== 2) {
-                levelCounter++;
+                console.log(levelCounter);
                 level = await loadLevel('2-1', font);
                 const character = entityFactory.me();
                 setupCanvas(context);
                 itemGenarator = loadItems(level);
+                levelCounter++;
             }else{
                 level = await loadLevel('2-2', font);
                 const character = entityFactory.me();

@@ -1,7 +1,7 @@
 import { loadImage } from '../loaders.js';
 import SpriteSheet from '../SpriteSheet.js';
 
-const CHARS = '0123456789-               ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+const CHARS = '0123456789-:.@            ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
 
 class Font {
     constructor(sprites, size) {
